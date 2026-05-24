@@ -1,0 +1,229 @@
+/* 右键菜单 */
+.flow-operation-menu {
+    position: fixed;
+    min-width: 132px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-dropdown);
+    display: none;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    padding: 6px;
+}
+
+.flow-operation-menu.show {
+    display: block;
+    animation: menuShow 0.15s ease;
+}
+
+@keyframes menuShow {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.menu-item {
+    padding: 9px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border-radius: 6px;
+    color: var(--text-primary);
+}
+
+.menu-item:hover {
+    background: var(--accent-light);
+}
+
+.menu-item.danger {
+    color: var(--danger);
+}
+
+.menu-item.danger:hover {
+    background: rgba(207, 63, 69, 0.1);
+}
+
+.menu-divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 4px 0;
+}
+
+/* 确认对话框 */
+.confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 20, 36, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.confirm-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.confirm-modal .modal-box {
+    background: var(--bg-surface);
+    padding: 32px;
+    border-radius: var(--radius);
+    width: 380px;
+    max-width: 90%;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    transform: scale(0.9) translateY(20px);
+    transition: transform var(--transition-base);
+}
+
+.confirm-modal.show .modal-box {
+    transform: scale(1) translateY(0);
+}
+
+.confirm-modal .modal-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    background: rgba(219, 65, 93, 0.1);
+    color: var(--danger);
+}
+
+.confirm-modal .modal-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.confirm-modal h4 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.confirm-modal p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.confirm-modal .btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.confirm-modal button {
+    min-height: 42px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.confirm-modal .btn-cancel {
+    background: var(--bg-surface-strong);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+.confirm-modal .btn-cancel:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-strong);
+}
+
+.confirm-modal .btn-confirm {
+    background: var(--accent-gradient);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(97, 92, 246, 0.2);
+}
+
+.confirm-modal .btn-confirm:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(97, 92, 246, 0.25);
+}
+
+/* 重命名弹框 */
+.rename-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 20, 36, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+}
+
+.rename-modal .modal-box {
+    background: var(--bg-surface);
+    padding: 24px;
+    border-radius: var(--radius);
+    width: 360px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+}
+
+.rename-modal h4 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.rename-modal input {
+    width: 100%;
+    padding: 9px 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: var(--bg-input);
+}
+
+.rename-modal .btns {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.rename-modal button {
+    min-height: 34px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.rename-modal .btn-cancel {
+    background: var(--bg-surface-strong);
+}
+
+.rename-modal .btn-confirm {
+    background: var(--accent);
+    color: #fff;
+}

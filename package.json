@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "bpmn-js": "^18.14.0",
+    "bpmn-js-properties-panel": "^5.53.0",
+    "camunda-bpmn-moddle": "^7.0.1"
+  },
+  "devDependencies": {
+    "vite": "^8.0.3"
+  }
+}

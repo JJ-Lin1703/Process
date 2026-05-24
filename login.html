@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - BPMN 智能建模</title>
+    <link rel="stylesheet" href="frontend_resource/CSS/01-variables.css">
+    <link rel="stylesheet" href="frontend_resource/CSS/02-base.css">
+    <link rel="stylesheet" href="frontend_resource/CSS/08-components.css">
+    <link rel="stylesheet" href="frontend_resource/CSS/11-toast.css">
+    <link rel="stylesheet" href="frontend_resource/CSS/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-wrapper">
+            <div class="illustration">
+                <h2>BPMN 智能建模</h2>
+                <p>基于AI的业务流程自动化设计工具，快速生成、智能微调BPMN流程图</p>
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"/>
+                            </svg>
+                        </div>
+                        <span>AI智能生成流程图</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zm18.37-11.48a1 1 0 0 0 0-1.41l-1.73-1.73a1 1 0 0 0-1.41 0l-1.36 1.36 3.75 3.75 1.75-1.97z"/>
+                            </svg>
+                        </div>
+                        <span>交互式流程微调</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h1zM5 19h14v2H5z"/>
+                            </svg>
+                        </div>
+                        <span>支持BPMN导入导出</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-card">
+                <div class="login-logo">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                    <h1>BPMN 智能建模</h1>
+                </div>
+
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchPanel('login')">登录</button>
+                    <button class="tab-btn" onclick="switchPanel('register')">注册</button>
+                </div>
+
+                <div id="login-panel" class="form-panel active">
+                    <div class="form-item">
+                        <label>用户名</label>
+                        <input type="text" id="login-username" placeholder="请输入用户名">
+                    </div>
+                    <div class="form-item">
+                        <label>密码</label>
+                        <input type="password" id="login-pwd" placeholder="请输入密码">
+                    </div>
+                    <button class="submit-btn" onclick="userLogin()">登录</button>
+                    <div class="tip">
+                        <a href="javascript:void(0)" onclick="showForgotPassword()">忘记密码？</a>
+                    </div>
+                    <div class="tip">
+                        还没有账号？<a href="javascript:void(0)" onclick="switchPanel('register')">立即注册</a>
+                    </div>
+                </div>
+
+                <div id="register-panel" class="form-panel">
+                    <div class="form-item">
+                        <label>用户名</label>
+                        <input type="text" id="reg-username" placeholder="请输入用户名">
+                    </div>
+                    <div class="form-item">
+                        <label>邮箱（选填，用于找回密码）</label>
+                        <input type="email" id="reg-email" placeholder="请输入邮箱">
+                    </div>
+                    <div class="form-item">
+                        <label>密码</label>
+                        <input type="password" id="reg-pwd" placeholder="请输入密码">
+                    </div>
+                    <div class="form-item">
+                        <label>确认密码</label>
+                        <input type="password" id="reg-confirm-pwd" placeholder="请再次输入密码">
+                    </div>
+                    <button class="submit-btn" onclick="userRegister()">注册</button>
+                    <div class="tip">
+                        已有账号？<a href="javascript:void(0)" onclick="switchPanel('login')">立即登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="frontend_resource/js/login.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initKeydownEvents();
+        });
+    </script>
+</body>
+</html>

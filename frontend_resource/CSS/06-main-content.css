@@ -1,0 +1,205 @@
+.canvas {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    background:
+        radial-gradient(circle at 1px 1px, rgba(151, 160, 181, 0.18) 1px, transparent 0) 0 0 / 18px 18px,
+        linear-gradient(180deg, #ffffff 0%, #fcfdff 100%);
+}
+
+.canvas-toolbar {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    left: auto;
+    z-index: 90;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row;
+    white-space: nowrap;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+    pointer-events: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+    display:flex;
+}
+
+.canvas-toolbar::-webkit-scrollbar {
+    height: 0;
+}
+
+.canvas-tool-btn {
+    display: inline-flex;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-width: 48px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.canvas-tool-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-strong);
+}
+
+.canvas .bjs-container {
+    background: transparent !important;
+    pointer-events: auto;
+}
+
+.canvas .djs-container svg,
+.canvas .djs-container .viewport {
+    background: transparent !important;
+    pointer-events: auto;
+}
+
+.canvas .djs-connection.selected .djs-outline,
+.canvas .djs-connection.selected .djs-visual {
+    stroke-width: 2px !important;
+}
+
+.canvas .djs-palette {
+    display: block !important;
+    top: 72px;
+    left: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.canvas .djs-context-pad {
+    display: block !important;
+}
+
+.canvas .djs-palette:not(.open) .djs-palette-entries {
+    display: block !important;
+}
+
+.canvas .djs-palette:not(.open) {
+    width: 46px;
+    height: auto;
+}
+
+.canvas .djs-palette .entry,
+.canvas .djs-palette .djs-palette-toggle {
+    pointer-events: auto;
+}
+
+.canvas .bjs-powered-by,
+.canvas .bjs-breadcrumbs,
+.canvas .bjs-drilldown,
+.canvas .djs-popup,
+.canvas .bjs-element-template-chooser {
+    display: none !important;
+}
+
+.canvas .djs-direct-editing-content {
+    font-family: var(--font-family);
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+
+.bpmn-canvas {
+    display: none;
+    min-height: calc(100vh - 170px);
+}
+
+.bpmn-canvas.is-active {
+    display: block;
+}
+
+
+/* ======================
+   属性面板（右侧节点属性）
+====================== */
+.properties-shell {
+  position: relative;
+  width: 280px;            /* 固定宽度 */
+  flex-shrink: 0;          /* 不让压缩 */
+  height: 100%;
+  padding: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: visible;
+  transition: 
+    width var(--transition-base), 
+    padding var(--transition-base), 
+    border-color var(--transition-base);
+}
+
+/* 伸缩按钮 */
+.properties-shell .panel-toggle-btn {
+  position: absolute;
+  top: 300px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
+  cursor: pointer;
+  z-index: 300;
+  transition: all var(--transition-fast);
+}
+
+.properties-shell .panel-toggle-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateX(-1px);
+}
+
+/* 折叠后样式 —— 完全模仿右边栏！*/
+.properties-shell.collapsed {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* 折叠后隐藏内部内容 */
+.properties-shell.collapsed .properties-header,
+.properties-shell.collapsed #properties-panel {
+  display: none !important;
+}
+
+/* 画布容器：自动占满剩余空间 */
+.canvas-stack {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+/* 编辑器容器：弹性布局 */
+.editor-shell {
+  display: flex;
+  height: 100%;
+  gap: 12px;
+}

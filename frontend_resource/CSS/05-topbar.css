@@ -1,0 +1,128 @@
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 76px;
+    padding: 12px 18px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.bar-left {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.bar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.input-key,
+.select-model,
+.input-temp {
+    height: 38px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input-key {
+    width: 168px;
+    padding: 0 16px;
+}
+
+.select-model {
+    width: 140px;
+    padding: 0 38px 0 16px;
+}
+
+.input-temp {
+    width: 70px;
+    padding: 0 12px;
+    text-align: center;
+}
+
+.input-key::placeholder {
+    color: var(--text-tertiary);
+}
+
+.input-key:focus,
+.select-model:focus,
+.input-temp:focus {
+    outline: none;
+    border-color: rgba(97, 92, 246, 0.35);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(97, 92, 246, 0.08);
+}
+
+.btn-import {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 38px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-import:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-strong);
+}
+
+.msg {
+    display: none;
+    max-width: 280px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.msg.success {
+    color: var(--success);
+    background: rgba(15, 159, 111, 0.1);
+}
+
+.msg.error {
+    color: var(--danger);
+    background: rgba(219, 65, 93, 0.12);
+}
